@@ -106,3 +106,47 @@ class Stack {
     }
   }
 }
+
+//////////////////////////////////////////////////
+
+// Queue Linked List
+class Queue {
+  constructor() {
+    this.size = 0;
+    this.tail = null;
+  }
+
+  add(element) {
+    const node = {element, next: null};
+    if (this.tail === null) {
+      this.tail = node;
+      this.size += 1;
+    } else {
+      let last = this.tail
+      this.tail = node
+      this.tail.next = last
+      this.size += 1;
+    }
+  }
+
+  pop() {
+    let current = this.tail;
+    let count = 0
+    if (this.size === 0) {
+      return 'Empty'
+    } else if (this.size === 1) {
+      this.tail = null;
+      this.size -= 1;
+      return current.element
+    } else {
+      while (count < this.size - 2) {
+        current = current.next;
+        count += 1;
+      }
+      const toReturn = current.next.element;
+      current.next = null;
+      this.size -= 1;
+      return toReturn
+    }
+  }
+}
