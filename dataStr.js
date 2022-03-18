@@ -61,3 +61,48 @@ class LinkedList {
     }
   }
 }
+
+//////////////////////////////////////////////////
+
+// Stack Linked List
+class Stack {
+  constructor(){
+    this.size = 0;
+    this.head = null;
+  }
+
+  add(element) {
+    const node = {element, next: null};
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      let current = this.head
+      while (current.next !== null) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.size += 1;
+  }
+
+  pop() {
+    let current = this.head;
+    if (this.size === 0){
+      return 'Empty'
+    } else if (this.size === 1) {
+      this.head = null;
+      this.size = 0;
+      return current.element;
+    } else {
+      let count = 0;
+      while (count < this.size - 2) {
+        current = current.next;
+        count += 1;
+      }
+      const value = current.next.element;
+      current.next = null;
+      this.size -= 1;
+      return value
+    }
+  }
+}
