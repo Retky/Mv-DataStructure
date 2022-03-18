@@ -5,59 +5,57 @@ class LinkedList {
   }
 
   add(element) {
-    const node = {element, next: null};
+    const node = {element, next: null};  //Basic node
 
     if (this.head === null) {
-      this.head = node;
+      this.head = node;  //Add the first node
     } else {
-      let current = this.head
+      let current = this.head  //Select the first Parent node
       while (current.next !== null) {
-        current = current.next;
+        current = current.next;  //Select the last Parent node
       }
-
-        current.next = node;
+        current.next = node;  //Add node to the last Parent node
     }
   }
   
   getNode(index) {
-    let current = this.head;
+    let current = this.head;  //Select first Parent node
     if (index === 0) {
-      return current
+      return current //Return first Node with childs
     } else {
-      let count = 0;
+      let count = 0;  //Help counter
       while (count < index) {
-        current = current.next
+        current = current.next  //Select the 'index' Parent node
         count += 1;
       }
-      return current
+      return current  //Return 'index' Node with childs
     }
   }
 
   get(index) {
-    return this.getNode(index).element
+    return this.getNode(index).element  //Return 'index' Node value
   }
 
   addAt(index, element) {
-    const prevNode = this.getNode(index-1);
-    const next = this.getNode(index);
-    const node = {element, next};
+    const prevNode = this.getNode(index-1);  //Select the previous node
+    const next = this.getNode(index);  //Copy the 'next after add' node
+    const node = {element, next};  //Create node to add with next as child
 
     if (index <= 0) {
-      this.head = {element, next};
+      this.head = {element, next};  //Add node as first
     } else {
-
-      prevNode.next = node;
+      prevNode.next = node;  //Add node with prevNode as Parent
     }
   }
 
   remove(index) {
-    const prevNode = this.getNode(index-1);
-    const next = this.getNode(index+1);
+    const prevNode = this.getNode(index-1);  //Select the previous node
+    const next = this.getNode(index+1);  //Select the next node
 
     if (index <= 0) {
-      this.head = next;
+      this.head = next;  //Add next as first
     } else {
-      prevNode.next = next;
+      prevNode.next = next;  //Add next as child of prevNode
     }
   }
 }
