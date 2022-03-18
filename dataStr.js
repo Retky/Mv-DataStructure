@@ -5,7 +5,7 @@ class LinkedList {
   }
 
   add(element) {
-    const node = {element, next: null};  //Basic node
+    const node = {element, next: null};  //Create basic node
 
     if (this.head === null) {
       this.head = node;  //Add the first node
@@ -70,37 +70,37 @@ class Stack {
   }
 
   add(element) {
-    const node = {element, next: null};
+    const node = {element, next: null};  //Create basic node
     if (this.head === null) {
-      this.head = node;
+      this.head = node;  //Add node as first
     } else {
-      let current = this.head
+      let current = this.head  //Select first node
       while (current.next !== null) {
-        current = current.next;
+        current = current.next;  //Select last node
       }
-      current.next = node;
+      current.next = node;  //Add node to last node
     }
-    this.size += 1;
+    this.size += 1;  //Update list length
   }
 
   pop() {
-    let current = this.head;
+    let current = this.head;  //Select first node
     if (this.size === 0){
-      return 'Empty'
-    } else if (this.size === 1) {
-      this.head = null;
-      this.size = 0;
-      return current.element;
+      return 'Empty'  //If empty
+    } else if (this.size === 1) {  //ONLY FOR 1 NODE
+      this.head = null;  //Empty the list
+      this.size = 0;  //Update list length
+      return current.element;  //Return the first node value
     } else {
-      let count = 0;
+      let count = 0;  //Help counter
       while (count < this.size - 2) {
-        current = current.next;
+        current = current.next;  //Select one node before last
         count += 1;
       }
-      const value = current.next.element;
-      current.next = null;
-      this.size -= 1;
-      return value
+      const value = current.next.element;  //Copy last node value
+      current.next = null;  //Remove last node
+      this.size -= 1;  //Update list length
+      return value  //return las node value (l-100)
     }
   }
 }
