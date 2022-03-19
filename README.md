@@ -33,9 +33,9 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to get in touch with any issues or suggestions.
 
-- 🐛 **Bug reports & issues:** Use [GitHub Issues](https://github.com/Retky/Mv-AwesomeBooks/issues "Bugs & Issues")
-- 💡 **Suggestions:** Use [Github Discussions](https://github.com/Retky/Mv-AwesomeBooks/discussions "Suggestions")
-- 🙋‍♀️ **General questions:** Use [Github Discussions](https://github.com/Retky/Mv-AwesomeBooks/discussions "General Questions")
+- 🐛 **Bug reports & issues:** Use [GitHub Issues](https://github.com/Retky/Mv-DataStructure/issues "Bugs & Issues")
+- 💡 **Suggestions:** Use [Github Discussions](https://github.com/Retky/Mv-DataStructure/discussions "Suggestions")
+- 🙋‍♀️ **General questions:** Use [Github Discussions](https://github.com/Retky/Mv-DataStructure/discussions "General Questions")
 
 ## Show your support
 
